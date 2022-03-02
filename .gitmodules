@@ -1,0 +1,3 @@
+[submodule "MiniSched"]
+	path = MiniSched
+	url = lana@10.0.0.20:/volume1/git/MiniSched.git
