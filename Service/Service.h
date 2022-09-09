@@ -1,5 +1,5 @@
-#ifndef Service_h
-#define Service_h
+#ifndef AlysService_h
+#define AlysService_h
 
 #include <Arduino.h>
 #include "Boot/BootHook.h"
@@ -10,15 +10,18 @@ namespace Alys {
     class Service {
         public:
             Service(String name, BootHook::vBootCallback bootCallback, BootHook::vBootCallback periodicCallback, unsigned long interval);
+            Service();
 
             bool start();
+            void enrol();
 
-        private:
-            BootHook::vBootCallback bootCallback;
-            BootHook::vBootCallback periodicCallback;
+            BootHook::vBootCallback onBootCallback;
+            BootHook::vBootCallback onTickCallback;
 
-            bool started = false;
+            String name;
+
             unsigned long interval;
+            bool started = false;
 
             void schedule();
     };
