@@ -20,7 +20,7 @@ namespace Alys {
         private:
             vBootCallback callback = NULL;
             String name;
-};
+    };
 };
 
 #endif

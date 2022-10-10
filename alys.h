@@ -1,10 +1,16 @@
 #ifndef alys_h
+#define alys_h
+
 #include <Arduino.h>
 #include "config.h"
 #include "kernel.h"
 
 #include <Boot/Init.h>
 #include <MiniSched/MiniSched.h>
+
+#ifdef ALYS_FEATURE_SERVICES
+#include <Service/Service.h>
+#endif
 
 #ifdef ALYS_FEATURE_DEBUG
 #include <Debug/Debugger.h>
