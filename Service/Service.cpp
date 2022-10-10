@@ -17,8 +17,8 @@ void Alys::Service::enrol() {
     }
 
     if (this->onTickCallback != NULL) {
-        BootHook* bootScheduleHook = new Alys::BootHook("Schedule " + this->name, this->onTickCallback);
-        Alys::Init::getInstance().addHook(bootScheduleHook);
+        // As the scheduler only starts after the completed boot, this can be scheduled immediately.
+        schedule();
     }
 }
 
